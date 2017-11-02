@@ -14,6 +14,11 @@ public:
 		T* _array = new[200];
 		count = 0;
 	}
+	void Print()
+	{
+		for (int i = 0; i < count; ++i)
+			cout << _array[i] << " ";
+	}
   	~Array()
 	{
 		count = 0;
