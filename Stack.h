@@ -15,6 +15,18 @@
 #include "List.h"
 using namespace std;
 
+/*template<class T>
+struct Node
+{
+	T data;
+	Node<T> *next;
+	Node(T _data)
+	{
+		data=_data;
+		next=NULL;
+	}
+};*/
+
 template <typename T>
 class Stack
 {
