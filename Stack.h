@@ -24,6 +24,16 @@ public:
 		head=new Node<T>(_data);
 		head->next=ptr;
 	}
+	void print(char *end_)const
+	{
+		Node<T> *ptr=head;
+		while (ptr!=NULL)
+		{
+			cout<<ptr->data<<end_;
+			ptr=ptr->next;
+		}
+		cout<<endl;
+	}
 	~Stack()
 	{
 		if(head==NULL) return;
