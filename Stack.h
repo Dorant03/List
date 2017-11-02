@@ -12,9 +12,9 @@ template <typename T>
 class Stack
 {
 private:
-    T *stackPtr;
-    const int size;
-    int top;
+	Node<T> *head;
+    public:
+    
 
 };
 #endif /* Header_h */
