@@ -46,6 +46,12 @@ public:
 		}
 		return number;
 	}
+	void pop()
+	{
+		Node<T> *ptr=head;
+		head=head->next;
+		delete ptr;
+	}
 	
 	~Stack()
 	{
