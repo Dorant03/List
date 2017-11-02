@@ -40,6 +40,22 @@ public:
 		}
 		--count;
 	}
+	void AddTwo_array(T* array2, int count2)
+	{
+		for (int i = count; i < (count + count2); ++i)
+			_array[i] = _array[i - count];
+		count += count2;
+	}
+	void Obern_array()
+	{
+		int c;
+		for (int i = 0; i < (count / 2); ++i)
+		{
+			c = _array[i];
+			_array[i] = _array[count - i];
+			_array[count - i] = c;
+		}
+	}
 	void Print()
 	{
 		for (int i = 0; i < count; ++i)
