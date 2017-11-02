@@ -56,6 +56,42 @@ public:
 			_array[count - i] = c;
 		}
 	}
+	void Sort_array()
+	{
+		int c;
+		bool ok = true;
+		for (int i = 1; (i <= size) && ok; ++i)
+		{
+			ok = false;
+			for (int j = 0; j < (size - i); ++j)
+			{
+				if (_array[j] > _array[j + 1])
+				{
+					c = _array[j];
+					_array[j] = _array[j + 1];
+					_array[j + 1] = c;
+					ok = true;
+				}
+			}
+		}
+	}
+	void SearchElement()
+	{
+		int c;
+		cout << "Input element, which you want find: ";
+		cin >> c;
+		bool ok = true;
+		for (int i = 0; i < count; ++i)
+		{
+			if (_array[i] == c)
+			{
+				cout << i << " ";
+				ok = false;
+			}
+		}
+		if (ok)
+			cout << "There are not this element in the _array";
+	}
 	void Print()
 	{
 		for (int i = 0; i < count; ++i)
