@@ -13,7 +13,23 @@ class Stack
 {
 private:
 	Node<T> *head;
-    public:
+public:
+	Stack()
+    	{
+		head=NULL;
+	}
+	~Stack()
+	{
+		if(head==NULL) return;
+		Node<T> *ptr=head;
+		while(ptr!=NULL)
+		{
+			head=head->next;
+			delete ptr;
+			ptr=head;
+		}
+	}
+	
     
 
 };
