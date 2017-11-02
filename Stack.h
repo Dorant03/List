@@ -67,7 +67,17 @@ public:
 			ptr=head;
 		}
 	}
-	
+	void find(T elem)
+	{
+		for(int i=0; i<size(); i++)
+		{
+			if(getValue()==elem)
+			{
+				return i;
+			}
+		}
+		return -1;
+	}
 	~Stack()
 	{
 		if(head==NULL) return;
