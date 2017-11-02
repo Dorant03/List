@@ -18,6 +18,12 @@ public:
     	{
 		head=NULL;
 	}
+	void puchBack(T _data)
+	{
+		Node<T> *ptr=head;
+		head=new Node<T>(_data);
+		head->next=ptr;
+	}
 	~Stack()
 	{
 		if(head==NULL) return;
