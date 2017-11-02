@@ -43,7 +43,11 @@ public:
 	}
 	int size()
 	{
-		
+		int number=0;
+		if(head==NULL)
+		{
+			return 0;
+		}
 		Node<T> *ptr=head;
 		while (ptr!=NULL)
 		{
