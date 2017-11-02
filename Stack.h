@@ -52,6 +52,21 @@ public:
 		head=head->next;
 		delete ptr;
 	}
+	T getValue()
+	{
+		return head->data;
+	}
+	void del()
+	{
+		if(head==NULL) return;
+		Node<T> *ptr=head;
+		while(ptr!=NULL)
+		{
+			head=head->next;
+			delete ptr;
+			ptr=head;
+		}
+	}
 	
 	~Stack()
 	{
