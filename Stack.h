@@ -6,8 +6,15 @@
 //  Copyright © 2017 Барабаш Мирослава. All rights reserved.
 //
 
-#ifndef Header_h
-#define Header_h
+#pragma once
+#ifdef Stack_EXPORTS
+#define Stack_API __declspec(dllexport) 
+#else
+#define Stack_API __declspec(dllimport) 
+#endif
+#include "List.h"
+using namespace std;
+
 template <typename T>
 class Stack
 {
