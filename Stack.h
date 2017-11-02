@@ -27,6 +27,12 @@ public:
 	
 	void print(char *end_)const
 	{
+		cout<<endl;
+		if(head==NULL)
+		{
+			cout<<"Stack is emply"<<endl;
+			return;
+		}
 		Node<T> *ptr=head;
 		while (ptr!=NULL)
 		{
