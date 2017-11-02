@@ -78,6 +78,17 @@ public:
 		}
 		return -1;
 	}
+	void extend(Stack *stack2)
+	{
+		stack2->print(" ");
+		int n=stack2->size();
+		for(int i=0; i<n; i++)
+		{
+			puchBack(stack2->getValue());
+			stack2->pop();
+		}
+	}
+	
 	~Stack()
 	{
 		if(head==NULL) return;
