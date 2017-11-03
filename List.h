@@ -101,3 +101,134 @@ public:
 		}
 		swap(ptr1->data, ptr2->data);
 	}
+void pop(int i)
+	{
+		if(i<0 || i+1>size())
+		{
+			cout<<"Error: list index out of range"<<endl;
+			return;
+		}
+		Node<T> *ptr=head;
+		while(i>0)
+		{
+			if(ptr->next==tail)
+			{
+				ptr->next=NULL;
+				tail=ptr;
+				return;
+			}
+			i--;
+			if(i==0)
+			{
+				ptr->next=ptr->next->next;
+				return;
+			}
+			else ptr=ptr->next;
+		}
+		if(ptr==head && ptr==tail) del();
+		else head=head->next;
+	}
+	void insert(int i, T elem)
+	{
+		Node<T> *ptr=head;
+		if(i>size())
+		{
+			cout<<"Error: list index out of range"<<endl;
+			return;
+		}
+		if(i==size())
+		{
+			puchBack(elem);
+			return;
+		}
+		if(i==0)
+		{
+			head=new Node<T>(elem);
+			head->next=ptr;
+			return;
+		}
+		Node<T> *ptr1;
+		while(i!=1)
+		{
+			ptr=ptr->next;
+			i--;
+		}
+		ptr1=ptr->next;
+		ptr->next=new Node<T>(elem);
+		ptr->next->next=ptr1;
+	}
+	T getValue(int i)
+	{
+		Node<T> *ptr=head;
+		for(int k=0; k<i; k++)
+		{
+			ptr=ptr->next;
+		}
+		return ptr->data;
+	}
+	void reverse()
+	{
+		int n=size();
+		for(int i=0; i<n/2; i++)
+		{
+			replace(i, n-i-1);
+		}
+	}
+	void del()
+	{
+		if(head==NULL) return;
+		Node<T> *ptr=head;
+		while(ptr!=NULL)
+		{
+			head=head->next;
+			delete ptr;
+			ptr=head;
+		}
+		tail=NULL;
+	}
+	void sort(string sing)
+	{
+		if(sing=="+")
+		{
+			for(int i=0; i<size()-1; i++)
+			{
+				for(int j=0; j<size()-i-1; j++)
+				{
+					if(getValue(j)>getValue(j+1))
+					{
+						replace(j, j+1);
+					}
+				}
+			}
+		}
+	}
+	void find(T elem)
+	{
+		for(int i=0; i<size(); i++)
+		{
+			if(getValue(i)==elem)
+			{
+				return i;
+			}
+		}
+		return -1;
+	}
+	void extend(List *list)
+	{
+		for(int i=0; i<list->size(); i++)
+		{
+			puchBack(list->getValue(i));
+		}
+	}
+	~List()
+	{
+		if(head==NULL) return;
+		Node<T> *ptr=head;
+		while(ptr!=NULL)
+		{
+			head=head->next;
+			delete ptr;
+			ptr=head;
+		}
+	}
+};
