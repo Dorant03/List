@@ -52,7 +52,7 @@ public:
 		cout<<endl;
 		if(head==NULL && count==0)
 		{
-			cout<<"Queue is emply"<<endl;
+			cout<<"Queue is empty"<<endl;
 			return;
 		}
 		Node<T> *ptr=head;
