@@ -18,7 +18,10 @@ struct Node
 		next=NULL;
 	}
 };
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/List1
 template<class T>
 class List
 {
@@ -102,7 +105,11 @@ public:
 		}
 		swap(ptr1->data, ptr2->data);
 	}
+<<<<<<< HEAD
 	void pop(int i)
+=======
+void pop(int i)
+>>>>>>> origin/List1
 	{
 		if(i<0 || i+1>size())
 		{
@@ -114,7 +121,10 @@ public:
 		{
 			if(ptr->next==tail)
 			{
+<<<<<<< HEAD
 				delete ptr->next;
+=======
+>>>>>>> origin/List1
 				ptr->next=NULL;
 				tail=ptr;
 				return;
@@ -122,19 +132,28 @@ public:
 			i--;
 			if(i==0)
 			{
+<<<<<<< HEAD
 				Node<T> *ptr1=ptr->next;
 				ptr->next=ptr->next->next;
 				delete ptr->next;
+=======
+				ptr->next=ptr->next->next;
+>>>>>>> origin/List1
 				return;
 			}
 			else ptr=ptr->next;
 		}
+<<<<<<< HEAD
 		if(ptr==head && ptr==tail) clear();
 		else
 		{
 			head=head->next;
 			delete ptr;
 		}
+=======
+		if(ptr==head && ptr==tail) del();
+		else head=head->next;
+>>>>>>> origin/List1
 	}
 	void insert(int i, T elem)
 	{
@@ -165,14 +184,22 @@ public:
 		ptr->next=new Node<T>(elem);
 		ptr->next->next=ptr1;
 	}
+<<<<<<< HEAD
 	Node<T> * getValue(int i)
+=======
+	T getValue(int i)
+>>>>>>> origin/List1
 	{
 		Node<T> *ptr=head;
 		for(int k=0; k<i; k++)
 		{
 			ptr=ptr->next;
 		}
+<<<<<<< HEAD
 		return ptr;
+=======
+		return ptr->data;
+>>>>>>> origin/List1
 	}
 	void reverse()
 	{
@@ -182,7 +209,11 @@ public:
 			replace(i, n-i-1);
 		}
 	}
+<<<<<<< HEAD
 	void clear()
+=======
+	void del()
+>>>>>>> origin/List1
 	{
 		if(head==NULL) return;
 		Node<T> *ptr=head;
@@ -192,7 +223,10 @@ public:
 			delete ptr;
 			ptr=head;
 		}
+<<<<<<< HEAD
 		head=NULL;
+=======
+>>>>>>> origin/List1
 		tail=NULL;
 	}
 	void sort(string sing)
@@ -211,11 +245,19 @@ public:
 			}
 		}
 	}
+<<<<<<< HEAD
 	int find(T elem)
 	{
 		for(int i=0; i<size(); i++)
 		{
 			if(getValue(i)->data==elem)
+=======
+	void find(T elem)
+	{
+		for(int i=0; i<size(); i++)
+		{
+			if(getValue(i)==elem)
+>>>>>>> origin/List1
 			{
 				return i;
 			}
@@ -226,7 +268,11 @@ public:
 	{
 		for(int i=0; i<list->size(); i++)
 		{
+<<<<<<< HEAD
 			puchBack(list->getValue(i)->data);
+=======
+			puchBack(list->getValue(i));
+>>>>>>> origin/List1
 		}
 	}
 	~List()
@@ -240,4 +286,8 @@ public:
 			ptr=head;
 		}
 	}
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> origin/List1
